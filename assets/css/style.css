@@ -1,0 +1,95 @@
+/* Healing Power Clinic — Global Styles (2025) */
+:root{--deep:#0F3562;--green:#2E7D32;--gold:#D4AF37;--soft:#F5F7F6;--text:#1B1F23;--muted:#6B7280;--white:#fff;--max:1200px;--radius:14px;--shadow:0 10px 30px rgba(15,53,98,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--deep);text-decoration:none;transition:.25s ease}
+a:hover{color:var(--green)}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.section{padding:64px 0}
+.section.light{background:var(--soft)}
+.h1,.h2,.h3{font-family:"Playfair Display",serif;color:var(--deep);line-height:1.2}
+.h1{font-size:clamp(32px,4vw,48px)}
+.h2{font-size:clamp(26px,3vw,36px)}
+.h3{font-size:clamp(20px,2vw,24px)}
+.lead{font-size:18px;color:var(--muted)}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;border:1px solid transparent;background:var(--deep);color:#fff;box-shadow:var(--shadow)}
+.btn:hover{background:var(--green);transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:#222}
+.tag{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(46,125,50,.1);color:var(--green);font-weight:600;font-size:12px}
+.grid{display:grid;gap:24px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1024px){.grid.cols-3,.grid.cols-4{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-3px)}
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e9eef2}
+.navbar{display:flex;align-items:center;gap:24px;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--deep)}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--deep),var(--green));display:inline-block}
+.nav{display:flex;align-items:center;gap:18px}
+.nav a{padding:8px 10px;border-radius:8px}
+.nav a:hover{background:var(--soft)}
+.nav .btn{margin-left:6px}
+/* Mega menu */
+.has-mega{position:relative}
+.mega{position:absolute;left:0;top:calc(100% + 10px);width:min(900px,90vw);background:#fff;border:1px solid #e9eef2;border-radius:16px;box-shadow:var(--shadow);padding:20px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s ease}
+.has-mega:hover .mega,.has-mega:focus-within .mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega .col{min-width:220px}
+.mega-title{font-weight:700;color:var(--deep);margin-bottom:8px}
+.mega a{display:block;padding:8px 10px;border-radius:8px;color:var(--text)}
+.mega a:hover{background:var(--soft);color:var(--green)}
+/* Mobile nav */
+.nav-toggle{display:none}
+@media(max-width:980px){
+  .nav{position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:1px solid #e9eef2;display:grid;gap:8px;padding:12px 20px;transform:translateY(-120%);transition:.25s ease}
+  .nav.open{transform:translateY(0)}
+  .hamb{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #e9eef2;border-radius:10px;background:#fff}
+  .has-mega>.mega{position:static;opacity:1;visibility:visible;transform:none;border:none;box-shadow:none;padding:0}
+}
+/* Hero */
+.hero{position:relative;padding:92px 0;background:radial-gradient(1200px 600px at 20% 10%,rgba(212,175,55,.08),transparent),linear-gradient(180deg,#fdfdfd, #f6fbf7)}
+.hero .eyebrow{margin-bottom:12px}
+.hero h1{margin:0 0 12px}
+.hero p{max-width:800px}
+.hero .actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+/* Feature rows */
+.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+@media(max-width:980px){.feature{grid-template-columns:1fr}}
+.illus{border-radius:16px;overflow:hidden;background:linear-gradient(135deg,rgba(15,53,98,.08),rgba(46,125,50,.08))}
+/* Footer */
+.site-footer{background:#0f3562;color:#dfe8f2;margin-top:40px}
+.site-footer a{color:#dfe8f2}
+.site-footer .grid{grid-template-columns:2fr 1fr 1fr 2fr}
+.site-footer h4{margin:0 0 10px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:18px;padding:14px 0;color:#b8c6d8}
+/* Utilities */
+.badge{background:rgba(15,53,98,.08);color:var(--deep);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
+.kicker{color:var(--green);font-weight:700}
+.list{padding-left:18px}
+.emph{color:var(--deep);font-weight:700}
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(12px);transition:.5s ease}
+.reveal.in-view{opacity:1;transform:none}
+/* FAQ */
+.faq{border:1px solid #e9eef2;border-radius:12px;padding:14px;margin:10px 0}
+.faq h3{margin:0 0 6px}
+/* Forms */
+.input{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px}
+.form-row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}}
+/* Tables / lists in mega menu */
+.link-muted{color:#334155}
+/* Parallax section */
+.parallax{background:url('../images/hero.webp') center/cover fixed}
+@media(max-width:980px){.parallax{background-attachment:scroll}}
+/* Buttons nuance */
+.btn-outline{background:#fff;color:var(--deep);border-color:var(--deep)}
+.btn-outline:hover{background:var(--deep);color:#fff}
+/* Chips */
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:#eef3f7;color:#0f3562;padding:6px 10px;border-radius:999px}
+
